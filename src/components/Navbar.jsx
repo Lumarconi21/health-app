@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { IoMenu } from "react-icons/io5";
-import { IoClose } from "react-icons/io5";
+import { IoMenu, IoClose } from "react-icons/io5";
+
 
 
 function Navbar() {
@@ -12,7 +12,7 @@ function Navbar() {
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/login">Log in</NavLink>
                 <NavLink to="/dashboard">Tablero</NavLink>
-                <NavLink to="/about">About</NavLink>
+                <NavLink to="/contact">Contacto</NavLink>
             </div>
         )
     }
@@ -22,11 +22,17 @@ function Navbar() {
     const toggleNavBar = () => {
         setIsOpen(!isOpen);
     }
+
     return (
-        <nav className="relative w-full grid-cols-2">
-            <span className="">LOGO</span>
+        <nav className="relative w-full ">
+            <span className="">NUTRILU</span>
             <div className="flex justify-end mt-2 mr-6">
-                <button className="text-red-400" onClick={toggleNavBar}>{isOpen ? <IoClose /> : <IoMenu />} </button>
+                <button className="text-red-400"
+                    onClick={toggleNavBar}
+                    aria-label="Toggle navigation"
+                >{isOpen ? <IoClose /> : <IoMenu />}
+
+                </button>
             </div>
 
             {isOpen && (
